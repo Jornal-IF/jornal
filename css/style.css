@@ -75,6 +75,31 @@ body {
     margin-bottom: 0.25rem;
 }
 
+/* Logo com imagem */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-img {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    /* Remover qualquer fundo/borda/padding para mostrar apenas o PNG */
+    background: none;
+    padding-top: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    border-radius: 0;
+    display: block;
+}
+
+.logo-text h1 {
+    margin: 0;
+}
+
 .tagline {
     font-size: 0.875rem;
     opacity: 0.9;

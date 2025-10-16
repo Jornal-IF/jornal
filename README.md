@@ -1,10 +1,10 @@
-# IFNews - Portal de Notícias do IFPB
+# Jornal IF - Portal de Notícias do IFPB
 
 Portal de notícias universitário desenvolvido para o Instituto Federal da Paraíba (IFPB), utilizando apenas HTML5 e CSS3.
 
 ## 📋 Descrição
 
-O IFNews é um site de notícias acadêmico com design moderno, responsivo e de fácil navegação. O projeto foi desenvolvido com foco em semântica HTML5 e estilização pura com CSS3, sem uso de frameworks ou JavaScript.
+O Jornal IF é um site de notícias acadêmico com design moderno, responsivo e de fácil navegação. O projeto foi desenvolvido com foco em semântica HTML5 e estilização pura com CSS3, sem uso de frameworks ou JavaScript.
 
 ## 🎨 Características
 
@@ -16,7 +16,7 @@ O IFNews é um site de notícias acadêmico com design moderno, responsivo e de 
 ## 📁 Estrutura do Projeto
 
 ```
-ifnews/
+jornal-if/
 │
 ├── index.html           # Página inicial com notícias
 ├── vagas.html          # Página de vagas de estágio
@@ -135,4 +135,4 @@ Desenvolvido com HTML5 e CSS3 puros, seguindo as melhores práticas de desenvolv
 
 ---
 
-**IFNews** © 2025 - Instituto Federal da Paraíba
+**Jornal IF** © 2025 - Instituto Federal da Paraíba
