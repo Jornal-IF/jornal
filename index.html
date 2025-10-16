@@ -1,14 +1,266 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JORNAL</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Portal de notícias do IFPB - Notícias, vagas de estágio e editais">
+    <title>IFNews - Portal de Notícias do IFPB</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <!-- Cabeçalho fixo -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>IFNews</h1>
+                    <p class="tagline">Portal de Notícias do IFPB</p>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="vagas.html">Vagas de Estágio</a></li>
+                        <li><a href="editais.html">Editais</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-    <script src="script.js"></script>
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Seção de notícias -->
+                <section class="news-section">
+                    <h2 class="section-title">Últimas Notícias</h2>
+                    
+                    <!-- Notícia 1 -->
+                    <article class="news-card">
+                        <div class="news-header">
+                            <h3 class="news-title">IFPB abre inscrições para novos cursos técnicos em 2025</h3>
+                            <time class="news-date" datetime="2025-10-15">15 de outubro de 2025</time>
+                        </div>
+                        <p class="news-summary">
+                            O Instituto Federal da Paraíba está com inscrições abertas para cursos técnicos integrados 
+                            ao ensino médio nas áreas de Informática, Eletrônica e Edificações. As vagas são para os 
+                            campi de João Pessoa, Campina Grande e Cajazeiras. Inscrições vão até o dia 30 de outubro.
+                        </p>
+                        <a href="#" class="read-more">Leia mais →</a>
+                    </article>
+
+                    <!-- Notícia 2 -->
+                    <article class="news-card">
+                        <div class="news-header">
+                            <h3 class="news-title">Estudantes do IFPB conquistam primeiro lugar em competição nacional de robótica</h3>
+                            <time class="news-date" datetime="2025-10-12">12 de outubro de 2025</time>
+                        </div>
+                        <p class="news-summary">
+                            A equipe "RoboIF" do campus João Pessoa garantiu o primeiro lugar na categoria 
+                            desenvolvimento autônomo durante a Competição Brasileira de Robótica, realizada em São Paulo. 
+                            O projeto desenvolvido pelos alunos envolveu um robô capaz de realizar tarefas complexas 
+                            de forma totalmente autônoma.
+                        </p>
+                        <a href="#" class="read-more">Leia mais →</a>
+                    </article>
+
+                    <!-- Notícia 3 -->
+                    <article class="news-card">
+                        <div class="news-header">
+                            <h3 class="news-title">IFPB promove semana de tecnologia e inovação</h3>
+                            <time class="news-date" datetime="2025-10-10">10 de outubro de 2025</time>
+                        </div>
+                        <p class="news-summary">
+                            Entre os dias 20 e 25 de outubro, o IFPB realizará a Semana de Tecnologia e Inovação, 
+                            com palestras, workshops e minicursos sobre temas como Inteligência Artificial, 
+                            Desenvolvimento Web, Segurança da Informação e Sustentabilidade. 
+                            As inscrições são gratuitas e abertas à comunidade.
+                        </p>
+                        <a href="#" class="read-more">Leia mais →</a>
+                    </article>
+
+                    <!-- Notícia 4 -->
+                    <article class="news-card">
+                        <div class="news-header">
+                            <h3 class="news-title">Biblioteca do campus ganha novo acervo digital com mais de 5 mil títulos</h3>
+                            <time class="news-date" datetime="2025-10-08">08 de outubro de 2025</time>
+                        </div>
+                        <p class="news-summary">
+                            A Biblioteca Central do IFPB acaba de disponibilizar uma nova plataforma digital com 
+                            mais de 5 mil títulos em diversas áreas do conhecimento. O acesso é gratuito para 
+                            estudantes, professores e servidores através do portal da instituição.
+                        </p>
+                        <a href="#" class="read-more">Leia mais →</a>
+                    </article>
+
+                    <!-- Notícia 5 -->
+                    <article class="news-card">
+                        <div class="news-header">
+                            <h3 class="news-title">Projeto de extensão leva atendimento odontológico a comunidades carentes</h3>
+                            <time class="news-date" datetime="2025-10-05">05 de outubro de 2025</time>
+                        </div>
+                        <p class="news-summary">
+                            Alunos e professores do curso técnico em Saúde Bucal do IFPB estão realizando atendimentos 
+                            gratuitos em comunidades da região metropolitana de João Pessoa. O projeto já atendeu mais 
+                            de 300 pessoas nos últimos três meses.
+                        </p>
+                        <a href="#" class="read-more">Leia mais →</a>
+                    </article>
+                </section>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Resumo de vagas -->
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">Vagas de Estágio</h3>
+                        <div class="sidebar-item">
+                            <h4>Desenvolvedor Web Jr.</h4>
+                            <p class="item-meta">20h semanais • Informática</p>
+                        </div>
+                        <div class="sidebar-item">
+                            <h4>Assistente Administrativo</h4>
+                            <p class="item-meta">30h semanais • Administração</p>
+                        </div>
+                        <div class="sidebar-item">
+                            <h4>Técnico em Eletrônica</h4>
+                            <p class="item-meta">20h semanais • Eletrônica</p>
+                        </div>
+                        <a href="vagas.html" class="sidebar-link">Ver todas as vagas →</a>
+                    </div>
+
+                    <!-- Resumo de editais -->
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">Editais Abertos</h3>
+                        <div class="sidebar-item">
+                            <h4>Bolsa de Iniciação Científica</h4>
+                            <p class="item-meta">Pesquisa • Prazo: 25/10/2025</p>
+                        </div>
+                        <div class="sidebar-item">
+                            <h4>Projeto de Extensão</h4>
+                            <p class="item-meta">Extensão • Prazo: 30/10/2025</p>
+                        </div>
+                        <div class="sidebar-item">
+                            <h4>Auxílio Permanência</h4>
+                            <p class="item-meta">Bolsa • Prazo: 20/10/2025</p>
+                        </div>
+                        <a href="editais.html" class="sidebar-link">Ver todos os editais →</a>
+                    </div>
+
+                    <!-- Calendário de eventos -->
+                    <div class="sidebar-card calendar">
+                        <h3 class="sidebar-title">Calendário de Eventos</h3>
+                        <div class="calendar-month">
+                            <div class="month-header">Outubro 2025</div>
+                            <div class="calendar-grid">
+                                <div class="day-label">D</div>
+                                <div class="day-label">S</div>
+                                <div class="day-label">T</div>
+                                <div class="day-label">Q</div>
+                                <div class="day-label">Q</div>
+                                <div class="day-label">S</div>
+                                <div class="day-label">S</div>
+                                
+                                <div class="day empty"></div>
+                                <div class="day empty"></div>
+                                <div class="day empty"></div>
+                                <div class="day">1</div>
+                                <div class="day">2</div>
+                                <div class="day">3</div>
+                                <div class="day">4</div>
+                                <div class="day">5</div>
+                                <div class="day">6</div>
+                                <div class="day">7</div>
+                                <div class="day">8</div>
+                                <div class="day">9</div>
+                                <div class="day">10</div>
+                                <div class="day">11</div>
+                                <div class="day">12</div>
+                                <div class="day">13</div>
+                                <div class="day">14</div>
+                                <div class="day">15</div>
+                                <div class="day current">16</div>
+                                <div class="day">17</div>
+                                <div class="day">18</div>
+                                <div class="day">19</div>
+                                <div class="day event">20</div>
+                                <div class="day">21</div>
+                                <div class="day">22</div>
+                                <div class="day">23</div>
+                                <div class="day">24</div>
+                                <div class="day event">25</div>
+                                <div class="day">26</div>
+                                <div class="day">27</div>
+                                <div class="day">28</div>
+                                <div class="day">29</div>
+                                <div class="day event">30</div>
+                                <div class="day">31</div>
+                            </div>
+                            <div class="event-list">
+                                <div class="event-item">
+                                    <span class="event-date">20</span>
+                                    <span class="event-name">Início da Semana de Tecnologia</span>
+                                </div>
+                                <div class="event-item">
+                                    <span class="event-date">25</span>
+                                    <span class="event-name">Palestra sobre IA</span>
+                                </div>
+                                <div class="event-item">
+                                    <span class="event-date">30</span>
+                                    <span class="event-name">Prazo editais</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Espaço para propaganda -->
+                    <div class="sidebar-card ad-space">
+                        <p class="ad-label">Publicidade</p>
+                        <div class="ad-placeholder">
+                            <p>Espaço reservado para<br>Google AdSense</p>
+                            <small>300x250</small>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sobre o IFNews</h4>
+                    <p>Portal de notícias oficial do Instituto Federal da Paraíba, mantendo a comunidade 
+                       acadêmica informada sobre eventos, oportunidades e conquistas.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Úteis</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Portal do IFPB</a></li>
+                        <li><a href="#">SUAP</a></li>
+                        <li><a href="#">Biblioteca Digital</a></li>
+                        <li><a href="#">Calendário Acadêmico</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">Facebook</a>
+                        <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
+                        <a href="#" class="social-link" aria-label="Twitter">Twitter</a>
+                        <a href="#" class="social-link" aria-label="YouTube">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 IFNews - Instituto Federal da Paraíba. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

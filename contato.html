@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato com o IFNews - Portal de notícias do IFPB">
+    <title>Contato - IFNews</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cabeçalho fixo -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>IFNews</h1>
+                    <p class="tagline">Portal de Notícias do IFPB</p>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="vagas.html">Vagas de Estágio</a></li>
+                        <li><a href="editais.html">Editais</a></li>
+                        <li><a href="contato.html" class="active">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h2 class="page-title">Entre em Contato</h2>
+                <p class="page-subtitle">Envie suas dúvidas, sugestões ou denúncias</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <!-- Formulário de contato -->
+                <section class="contact-form-section">
+                    <h3 class="form-title">Formulário de Contato</h3>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="nome" class="form-label">Nome Completo *</label>
+                            <input 
+                                type="text" 
+                                id="nome" 
+                                name="nome" 
+                                class="form-input" 
+                                placeholder="Digite seu nome completo"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">E-mail *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                class="form-input" 
+                                placeholder="seu.email@exemplo.com"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefone" class="form-label">Telefone (opcional)</label>
+                            <input 
+                                type="tel" 
+                                id="telefone" 
+                                name="telefone" 
+                                class="form-input" 
+                                placeholder="(83) 9 9999-9999"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="assunto" class="form-label">Assunto *</label>
+                            <select id="assunto" name="assunto" class="form-select" required>
+                                <option value="">Selecione um assunto</option>
+                                <option value="sugestao">Sugestão</option>
+                                <option value="duvida">Dúvida</option>
+                                <option value="elogio">Elogio</option>
+                                <option value="reclamacao">Reclamação</option>
+                                <option value="denuncia">Denúncia</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensagem" class="form-label">Mensagem *</label>
+                            <textarea 
+                                id="mensagem" 
+                                name="mensagem" 
+                                class="form-textarea" 
+                                rows="6"
+                                placeholder="Digite sua mensagem aqui..."
+                                required
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="concordo" required>
+                                <span>Concordo com a <a href="#">política de privacidade</a> *</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                    </form>
+                </section>
+
+                <!-- Informações de contato -->
+                <aside class="contact-info-section">
+                    <h3 class="info-title">Informações de Contato</h3>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">📧</div>
+                        <div class="info-content">
+                            <h4>E-mail</h4>
+                            <p><a href="mailto:ifnews@ifpb.edu.br">ifnews@ifpb.edu.br</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">📱</div>
+                        <div class="info-content">
+                            <h4>Telefone</h4>
+                            <p>(83) 3612-1200</p>
+                            <p>(83) 3612-1201</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <div class="info-content">
+                            <h4>Endereço</h4>
+                            <p>Avenida Primeiro de Maio, 720</p>
+                            <p>Jaguaribe - João Pessoa/PB</p>
+                            <p>CEP: 58015-435</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">🕒</div>
+                        <div class="info-content">
+                            <h4>Horário de Atendimento</h4>
+                            <p>Segunda a Sexta: 8h às 17h</p>
+                            <p>Sábados e Domingos: Fechado</p>
+                        </div>
+                    </div>
+
+                    <!-- Redes sociais -->
+                    <div class="social-section">
+                        <h4>Siga-nos nas Redes Sociais</h4>
+                        <div class="social-links-contact">
+                            <a href="#" class="social-btn facebook" aria-label="Facebook">
+                                <span>Facebook</span>
+                            </a>
+                            <a href="#" class="social-btn instagram" aria-label="Instagram">
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" class="social-btn twitter" aria-label="Twitter">
+                                <span>Twitter</span>
+                            </a>
+                            <a href="#" class="social-btn youtube" aria-label="YouTube">
+                                <span>YouTube</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Ouvidoria -->
+                    <div class="ouvidoria-section">
+                        <h4>Ouvidoria</h4>
+                        <p>Para denúncias ou reclamações formais, utilize nosso canal de ouvidoria:</p>
+                        <a href="#" class="btn-ouvidoria">Acessar Ouvidoria</a>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Link para voltar -->
+            <div class="back-link-container">
+                <a href="index.html" class="back-link">← Voltar para Home</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sobre o IFNews</h4>
+                    <p>Portal de notícias oficial do Instituto Federal da Paraíba, mantendo a comunidade 
+                       acadêmica informada sobre eventos, oportunidades e conquistas.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Úteis</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Portal do IFPB</a></li>
+                        <li><a href="#">SUAP</a></li>
+                        <li><a href="#">Biblioteca Digital</a></li>
+                        <li><a href="#">Calendário Acadêmico</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">Facebook</a>
+                        <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
+                        <a href="#" class="social-link" aria-label="Twitter">Twitter</a>
+                        <a href="#" class="social-link" aria-label="YouTube">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 IFNews - Instituto Federal da Paraíba. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vagas de estágio disponíveis para estudantes do IFPB">
+    <title>Vagas de Estágio - IFNews</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cabeçalho fixo -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>IFNews</h1>
+                    <p class="tagline">Portal de Notícias do IFPB</p>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="vagas.html" class="active">Vagas de Estágio</a></li>
+                        <li><a href="editais.html">Editais</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h2 class="page-title">Vagas de Estágio</h2>
+                <p class="page-subtitle">Oportunidades de estágio para estudantes do IFPB</p>
+            </div>
+
+            <!-- Área de busca e filtros -->
+            <div class="filter-section">
+                <div class="search-box">
+                    <input type="text" placeholder="Pesquisar vagas..." class="search-input">
+                    <button class="search-button">Buscar</button>
+                </div>
+                <div class="filter-options">
+                    <label class="filter-label">Filtrar por área:</label>
+                    <select class="filter-select">
+                        <option value="">Todas as áreas</option>
+                        <option value="informatica">Informática</option>
+                        <option value="administracao">Administração</option>
+                        <option value="eletronica">Eletrônica</option>
+                        <option value="edificacoes">Edificações</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                    <select class="filter-select">
+                        <option value="">Carga horária</option>
+                        <option value="20">20h semanais</option>
+                        <option value="30">30h semanais</option>
+                        <option value="40">40h semanais</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Lista de vagas -->
+            <section class="vagas-list">
+                <!-- Vaga 1 -->
+                <article class="vaga-card">
+                    <div class="vaga-header">
+                        <h3 class="vaga-title">Desenvolvedor Web Junior</h3>
+                        <span class="vaga-badge">Informática</span>
+                    </div>
+                    <div class="vaga-info">
+                        <div class="info-item">
+                            <strong>Carga Horária:</strong> 20 horas semanais
+                        </div>
+                        <div class="info-item">
+                            <strong>Bolsa-auxílio:</strong> R$ 800,00
+                        </div>
+                        <div class="info-item">
+                            <strong>Local:</strong> João Pessoa - PB
+                        </div>
+                    </div>
+                    <p class="vaga-description">
+                        Estamos buscando um estudante de Informática para atuar no desenvolvimento de aplicações web 
+                        utilizando HTML, CSS, JavaScript e frameworks modernos. Conhecimentos em React ou Vue.js 
+                        serão considerados um diferencial. O estagiário irá trabalhar em projetos reais, 
+                        acompanhado por desenvolvedores seniores.
+                    </p>
+                    <div class="vaga-footer">
+                        <span class="vaga-date">Publicado em: 14/10/2025</span>
+                        <button class="btn-apply">Candidatar-se</button>
+                    </div>
+                </article>
+
+                <!-- Vaga 2 -->
+                <article class="vaga-card">
+                    <div class="vaga-header">
+                        <h3 class="vaga-title">Assistente Administrativo</h3>
+                        <span class="vaga-badge">Administração</span>
+                    </div>
+                    <div class="vaga-info">
+                        <div class="info-item">
+                            <strong>Carga Horária:</strong> 30 horas semanais
+                        </div>
+                        <div class="info-item">
+                            <strong>Bolsa-auxílio:</strong> R$ 900,00
+                        </div>
+                        <div class="info-item">
+                            <strong>Local:</strong> Campina Grande - PB
+                        </div>
+                    </div>
+                    <p class="vaga-description">
+                        Oportunidade para estudantes de Administração auxiliarem na gestão de processos administrativos, 
+                        atendimento ao público, organização de documentos e apoio em atividades de recursos humanos. 
+                        Desejável conhecimento em pacote Office e boa comunicação.
+                    </p>
+                    <div class="vaga-footer">
+                        <span class="vaga-date">Publicado em: 13/10/2025</span>
+                        <button class="btn-apply">Candidatar-se</button>
+                    </div>
+                </article>
+
+                <!-- Vaga 3 -->
+                <article class="vaga-card">
+                    <div class="vaga-header">
+                        <h3 class="vaga-title">Técnico em Eletrônica</h3>
+                        <span class="vaga-badge">Eletrônica</span>
+                    </div>
+                    <div class="vaga-info">
+                        <div class="info-item">
+                            <strong>Carga Horária:</strong> 20 horas semanais
+                        </div>
+                        <div class="info-item">
+                            <strong>Bolsa-auxílio:</strong> R$ 750,00
+                        </div>
+                        <div class="info-item">
+                            <strong>Local:</strong> João Pessoa - PB
+                        </div>
+                    </div>
+                    <p class="vaga-description">
+                        Vaga para estudante de Eletrônica atuar na manutenção preventiva e corretiva de equipamentos 
+                        eletrônicos, montagem de circuitos e testes de componentes. Necessário conhecimento básico 
+                        em leitura de esquemas elétricos e uso de multímetro.
+                    </p>
+                    <div class="vaga-footer">
+                        <span class="vaga-date">Publicado em: 12/10/2025</span>
+                        <button class="btn-apply">Candidatar-se</button>
+                    </div>
+                </article>
+
+                <!-- Vaga 4 -->
+                <article class="vaga-card">
+                    <div class="vaga-header">
+                        <h3 class="vaga-title">Auxiliar de Projetos em Edificações</h3>
+                        <span class="vaga-badge">Edificações</span>
+                    </div>
+                    <div class="vaga-info">
+                        <div class="info-item">
+                            <strong>Carga Horária:</strong> 30 horas semanais
+                        </div>
+                        <div class="info-item">
+                            <strong>Bolsa-auxílio:</strong> R$ 950,00
+                        </div>
+                        <div class="info-item">
+                            <strong>Local:</strong> Cajazeiras - PB
+                        </div>
+                    </div>
+                    <p class="vaga-description">
+                        Estágio para auxiliar no desenvolvimento de projetos arquitetônicos e estruturais, 
+                        utilizando ferramentas como AutoCAD e SketchUp. O estagiário irá participar de visitas 
+                        técnicas e acompanhamento de obras, aprendendo na prática sobre gestão de projetos.
+                    </p>
+                    <div class="vaga-footer">
+                        <span class="vaga-date">Publicado em: 11/10/2025</span>
+                        <button class="btn-apply">Candidatar-se</button>
+                    </div>
+                </article>
+
+                <!-- Vaga 5 -->
+                <article class="vaga-card">
+                    <div class="vaga-header">
+                        <h3 class="vaga-title">Suporte Técnico em TI</h3>
+                        <span class="vaga-badge">Informática</span>
+                    </div>
+                    <div class="vaga-info">
+                        <div class="info-item">
+                            <strong>Carga Horária:</strong> 20 horas semanais
+                        </div>
+                        <div class="info-item">
+                            <strong>Bolsa-auxílio:</strong> R$ 700,00
+                        </div>
+                        <div class="info-item">
+                            <strong>Local:</strong> João Pessoa - PB
+                        </div>
+                    </div>
+                    <p class="vaga-description">
+                        Vaga para estudante de Informática prestar suporte técnico aos usuários, realizar manutenção 
+                        de computadores, instalação de softwares e auxílio na resolução de problemas de rede. 
+                        Boa comunicação e vontade de aprender são essenciais.
+                    </p>
+                    <div class="vaga-footer">
+                        <span class="vaga-date">Publicado em: 10/10/2025</span>
+                        <button class="btn-apply">Candidatar-se</button>
+                    </div>
+                </article>
+
+                <!-- Vaga 6 -->
+                <article class="vaga-card">
+                    <div class="vaga-header">
+                        <h3 class="vaga-title">Designer Gráfico</h3>
+                        <span class="vaga-badge">Design</span>
+                    </div>
+                    <div class="vaga-info">
+                        <div class="info-item">
+                            <strong>Carga Horária:</strong> 20 horas semanais
+                        </div>
+                        <div class="info-item">
+                            <strong>Bolsa-auxílio:</strong> R$ 850,00
+                        </div>
+                        <div class="info-item">
+                            <strong>Local:</strong> Campina Grande - PB
+                        </div>
+                    </div>
+                    <p class="vaga-description">
+                        Oportunidade para estudante criar peças gráficas para mídias digitais e impressas, 
+                        incluindo banners, folders, posts para redes sociais e identidade visual. 
+                        Necessário conhecimento em Adobe Photoshop, Illustrator ou ferramentas similares.
+                    </p>
+                    <div class="vaga-footer">
+                        <span class="vaga-date">Publicado em: 09/10/2025</span>
+                        <button class="btn-apply">Candidatar-se</button>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Link para voltar -->
+            <div class="back-link-container">
+                <a href="index.html" class="back-link">← Voltar para Home</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sobre o IFNews</h4>
+                    <p>Portal de notícias oficial do Instituto Federal da Paraíba, mantendo a comunidade 
+                       acadêmica informada sobre eventos, oportunidades e conquistas.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Úteis</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Portal do IFPB</a></li>
+                        <li><a href="#">SUAP</a></li>
+                        <li><a href="#">Biblioteca Digital</a></li>
+                        <li><a href="#">Calendário Acadêmico</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">Facebook</a>
+                        <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
+                        <a href="#" class="social-link" aria-label="Twitter">Twitter</a>
+                        <a href="#" class="social-link" aria-label="YouTube">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 IFNews - Instituto Federal da Paraíba. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
