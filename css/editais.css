@@ -1,0 +1,100 @@
+/* Estilos exclusivos da página de Editais */
+
+.editais-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-title-secondary {
+    font-size: 1.5rem;
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.section-icon {
+    font-size: 1.75rem;
+}
+
+.edital-card {
+    background: var(--accent-white);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edital-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.edital-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.edital-title {
+    font-size: 1.125rem;
+    color: var(--dark-green);
+    flex: 1;
+}
+
+.edital-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.edital-badge.pesquisa {
+    background: #3498db;
+    color: var(--accent-white);
+}
+
+.edital-badge.extensao {
+    background: #e67e22;
+    color: var(--accent-white);
+}
+
+.edital-badge.bolsa {
+    background: #9b59b6;
+    color: var(--accent-white);
+}
+
+.edital-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background: var(--light-gray);
+    border-radius: 4px;
+}
+
+.edital-description {
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.edital-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--medium-gray);
+}
+
+.edital-number {
+    font-size: 0.8125rem;
+    color: #666;
+    font-weight: 500;
+}
