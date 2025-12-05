@@ -47,24 +47,24 @@
             <div class="filter-section">
                 <div class="search-box">
                     <input type="text" placeholder="Pesquisar editais..." class="search-input">
-                    <button class="search-button">Buscar</button>
+                    <button class="search-button" onclick="filtrarEditais()">Buscar</button>
                 </div>
                 <div class="filter-options">
                     <label class="filter-label">Filtrar por tipo:</label>
-                    <select class="filter-select">
+                    <select class="filter-select" id="tipo">
                         <option value="">Todos os tipos</option>
-                        <option value="pesquisa">Pesquisa</option>
-                        <option value="extensao">Extensão</option>
-                        <option value="inovacao">Inovação</option>
+                        <option value="Pesquisa">Pesquisa</option>
+                        <option value="Extensão">Extensão</option>
+                        <option value="Inovação">Inovação</option>
                     </select>
-                    <select class="filter-select">
+                    <select class="filter-select" id="curso">
                         <option value="">Todos os cursos</option>
-                        <option value="ads">Análise e Desenvolvimento de Sistemas</option>
-                        <option value="beca">Engenharia de Controle e Automação</option>
-                        <option value="civil">Engenharia Civil</option>
-                        <option value="intin">Técnico em Informática</option>
-                        <option value="inted">Técnico em Edificações</option>
-                        <option value="intel">Técnico em Eletromecânica</option>
+                        <option value="ADS">Análise e Desenvolvimento de Sistemas</option>
+                        <option value="BECA">Engenharia de Controle e Automação</option>
+                        <option value="CIVIL">Engenharia Civil</option>
+                        <option value="INTIN">Técnico em Informática</option>
+                        <option value="INTED">Técnico em Edificações</option>
+                        <option value="INTEL">Técnico em Eletromecânica</option>
                     </select>
                 </div>
             </div>
@@ -138,6 +138,7 @@
             </div>
         </div>
     </footer>
+    <script src="../js/dados.js"></script>
     <script src="../js/editais.js"></script>
 </body>
 </html>
