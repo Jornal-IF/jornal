@@ -1,5 +1,7 @@
 // renderizando as notícias na página inicial
 function renderizandoNotícias() {
+    //limpar o conteúdo interno do elemento HTML que possui o id="news-list"
+    document.getElementById("news-list").innerHTML = '';
     let index = 0;
     for (const noticia of noticias){
         let html = `<article class="news-card">
@@ -23,6 +25,7 @@ function renderizandoNotícias() {
 }
 
 function renderizandoVagasEstagioPaginaPrincipal(){
+    document.getElementById("list-vagas-estagio").innerHTML = '';
     for (const vaga of vagasEstagio.slice(0, 3)){
         let html = `<div class="sidebar-item">
                         <h4>${vaga.titulo}</h4>
@@ -33,6 +36,7 @@ function renderizandoVagasEstagioPaginaPrincipal(){
 }
 
 function renderizandoProjetosPaginaPrincipal(){
+    document.getElementById("list-editais-projetos").innerHTML = '';
     for (const projeto of editais.slice(0, 3)){
         let html = `<div class="sidebar-item">
                         <h4>${projeto.titulo}</h4>
@@ -57,3 +61,5 @@ function curtida(elemento) {
 renderizandoNotícias();
 renderizandoVagasEstagioPaginaPrincipal();
 renderizandoProjetosPaginaPrincipal();
+
+
