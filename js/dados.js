@@ -47,7 +47,7 @@ const vagasEstagio = [
         id: 3,
         titulo: 'Estágio em Engenharia de Controle e Automação',
         empresa: 'Isis',
-        cidade: 'Sousa',
+        cidade: 'Uiraúna',
         curso: 'Engenharia de Controle e Automação',
         curso_tag: 'BECA',
         salário: 'R$ 1.000,00',
