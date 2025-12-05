@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Área administrativa para cadastro de conteúdo - Jornal IFPB">
+    <title>Jornal IF - Cadastro de Conteúdo</title>
+    
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="contact-wrapper">
+                <section class="contact-form-section">
+                    <h3 class="form-title">Cadastrar Novo Conteúdo (Notícia ou Vaga)</h3>
+                    
+                    <form id="noticiaForm" class="contact-form">
+                        
+                        <div class="form-group">
+                            <label for="titulo" class="form-label">Título</label>
+                            <input 
+                                type="text" 
+                                id="titulo" 
+                                name="titulo" 
+                                class="form-input" 
+                                placeholder="Título da Notícia ou Vaga"
+                                required
+                                minlength="3"
+                            >
+                            <div id="erro-titulo" class="erro-mensagem"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="categoria" class="form-label">Categoria</label>
+                            <select id="categoria" name="categoria" class="form-input" required>
+                                <option value="">Selecione...</option>
+                                <option value="Notícia">Notícia</option>
+                                <option value="Vaga">Vaga</option>
+                            </select>
+                            <div id="erro-categoria" class="erro-mensagem"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="data" class="form-label">Data</label>
+                            <input 
+                                type="date" 
+                                id="data" 
+                                name="data" 
+                                class="form-input" 
+                                required
+                            >
+                            <div id="erro-data" class="erro-mensagem"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="descricao" class="form-label">Descrição / Resumo *</label>
+                            <textarea 
+                                id="descricao" 
+                                name="descricao" 
+                                rows="4" 
+                                class="form-input"
+                                placeholder="Resumo do conteúdo (mínimo 10 caracteres)"
+                                required
+                                minlength="10"
+                            ></textarea>
+                            <div id="erro-descricao" class="erro-mensagem"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn-primary">Cadastrar Conteúdo</button>
+                        </div>
+
+                        <p id="confirmacao-mensagem" style="display:none; color: green; font-weight: bold; margin-top: 10px;"></p>
+                    </form>
+
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        </footer>
+
+    <script src="../../js/dados.js"></script>
+    <script src="../../js/admin/cadastro.js"></script> 
+</body>
+</html>

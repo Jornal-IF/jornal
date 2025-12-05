@@ -1,0 +1,99 @@
+/* Estilos exclusivos da página de Vagas */
+
+.vagas-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.vaga-card {
+    background: var(--accent-white);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vaga-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.vaga-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.vaga-title {
+    font-size: 1.25rem;
+    color: var(--dark-green);
+    flex: 1;
+}
+
+.vaga-badge {
+    background: var(--light-green);
+    color: var(--accent-white);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.vaga-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background: var(--light-gray);
+    border-radius: 4px;
+}
+
+.info-item {
+    font-size: 0.875rem;
+}
+
+.info-item strong {
+    color: var(--primary-green);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.vaga-description {
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.vaga-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--medium-gray);
+}
+
+.vaga-date {
+    font-size: 0.8125rem;
+    color: #666;
+}
+
+.btn-apply {
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--secondary-green);
+    color: var(--accent-white);
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-apply:hover {
+    background: var(--primary-green);
+}
