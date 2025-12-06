@@ -1,8 +1,10 @@
 // renderização dinâmica das vagas de estágio filtradas
 function renderizarVagasEstagio(vagas){
     document.getElementById("vagas-list").innerHTML = "";
+    let conteudoHTML = "";
+
     for (const vaga of vagas){
-        let html = `<article class="vaga-card">
+        conteudoHTML += `<article class="vaga-card">
                         <div class="vaga-header">
                             <h3 class="vaga-title">${vaga.titulo}</h3>
                             <span class="vaga-badge">${vaga.curso}</span>
@@ -26,18 +28,24 @@ function renderizarVagasEstagio(vagas){
                             <button class="btn-apply">Candidatar-se</button>
                         </div>
                 </article>`;
-        
-        document.getElementById("vagas-list").innerHTML += html;
     }
+
+    document.getElementById("vagas-list").innerHTML = conteudoHTML;
 }
 
 // filtragem das vagas
 function filtrarVagas(){
-    const filtro_curso = document.getElementById('curso').value;
-    const filtro_cidade = document.getElementById('cidade').value;
+    const curso = document.getElementById('curso').value;
+    const cidade = document.getElementById('cidade').value;
     const termo_digitado = document.getElementById('buscador-vagas').value.toLowerCase();
 
-    const vagas_filtradas = vagasEstagio.filter(vaga => (filtro_curso === vaga.curso_tag || filtro_curso == "") &&      (filtro_cidade === vaga.cidade || filtro_cidade === "") && (vaga.titulo.toLowerCase().includes(termo_digitado) || termo_digitado === ""));
+    const vagas_filtradas = vagasEstagio.filter(vaga => {
+        const filtro_curso = curso === "" || curso === vaga.curso_tag;
+        const filtro_cidade = cidade === "" || cidade === vaga.cidade;  
+        const filtro_termo = termo_digitado === "" || vaga.titulo.toLowerCase().includes(termo_digitado);
+
+        return filtro_curso && filtro_cidade && filtro_termo;
+    });
 
     if (vagas_filtradas.length == 0){
         document.getElementById("vagas-list").innerHTML = `<p>Nenhuma Vaga Disponível no Momento!</p>`;
@@ -49,7 +57,7 @@ function filtrarVagas(){
 
 filtrarVagas();
 
-const buscador = document.getElementById('buscador-vagas');
-buscador.addEventListener('input', () => {
-    filtrarVagas();
-})
+// adicionando os eventlistener's
+document.getElementById('buscador-vagas').addEventListener('input', filtrarVagas);
+document.getElementById('curso').addEventListener('change', filtrarVagas);
+document.getElementById('cidade').addEventListener('change', filtrarVagas);
