@@ -35,13 +35,21 @@ function renderizarVagasEstagio(vagas){
 function filtrarVagas(){
     const filtro_curso = document.getElementById('curso').value;
     const filtro_cidade = document.getElementById('cidade').value;
+    const termo_digitado = document.getElementById('buscador-vagas').value.toLowerCase();
 
-    const vagas_filtradas = vagasEstagio.filter(vaga => (filtro_curso === vaga.curso_tag || filtro_curso == "") && (filtro_cidade === vaga.cidade || filtro_cidade === "")); 
+    const vagas_filtradas = vagasEstagio.filter(vaga => (filtro_curso === vaga.curso_tag || filtro_curso == "") &&      (filtro_cidade === vaga.cidade || filtro_cidade === "") && (vaga.titulo.toLowerCase().includes(termo_digitado) || termo_digitado === ""));
+
     if (vagas_filtradas.length == 0){
         document.getElementById("vagas-list").innerHTML = `<p>Nenhuma Vaga Disponível no Momento!</p>`;
         return;
     }
+
     renderizarVagasEstagio(vagas_filtradas);
 }
 
 filtrarVagas();
+
+const buscador = document.getElementById('buscador-vagas');
+buscador.addEventListener('input', () => {
+    filtrarVagas();
+})
