@@ -3,91 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Área administrativa para cadastro de conteúdo - Jornal IFPB">
+    <meta name="description" content="Área Administrativa: Cadastro de Notícias, Vagas de Estágio e Editais de Projetos.">
     <title>Jornal IF - Cadastro de Conteúdo</title>
     
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css"> 
+    <link rel="stylesheet" href="../../css/cadastro.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <header class="header">
         <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="../../assets/images/JIFPNG.png" alt="Logo do Jornal IF" class="logo-img">
+                    <div class="logo-text">
+                        <h1>Jornal IF</h1>
+                        <p class="tagline">Portal de Notícias do IFPB</p>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../vagas.html">Vagas de Estágio</a></li>
+                        <li><a href="../editais.html">Editais</a></li>
+                        <li><a href="../contato.html">Contato</a></li>
+                        <li><a href="cadastro.html" class="active" style="background-color: #0d8b4f; color: white;">Admin Cadastro</a></li>
+                    </ul>
+                </nav>
             </div>
+        </div>
     </header>
 
     <main class="main-content">
         <div class="container">
+            <div class="page-header">
+                <h2 class="page-title">Área Administrativa</h2>
+                <p class="page-subtitle">Cadastro de Notícias, Vagas de Estágio e Editais de Projetos</p>
+            </div>
+
             <div class="contact-wrapper">
                 <section class="contact-form-section">
-                    <h3 class="form-title">Cadastrar Novo Conteúdo (Notícia ou Vaga)</h3>
+                    <h3 class="form-title">Cadastrar Novo Conteúdo</h3>
                     
                     <form id="noticiaForm" class="contact-form">
                         
                         <div class="form-group">
-                            <label for="titulo" class="form-label">Título</label>
-                            <input 
-                                type="text" 
-                                id="titulo" 
-                                name="titulo" 
-                                class="form-input" 
-                                placeholder="Título da Notícia ou Vaga"
-                                required
-                                minlength="3"
-                            >
-                            <div id="erro-titulo" class="erro-mensagem"></div>
+                            <label for="categoria" class="form-label">Tipo de Conteúdo *</label>
+                            <select id="categoria" name="categoria" class="form-select" required>
+                                <option value="">Selecione...</option>
+                                <option value="Notícia">Notícia</option>
+                                <option value="Vaga">Vaga de Estágio</option>
+                                <option value="Edital">Edital de Projeto</option>
+                            </select>
+                            <div id="erro-categoria" class="erro-mensagem"></div>
                         </div>
 
                         <div class="form-group">
-                            <label for="categoria" class="form-label">Categoria</label>
-                            <select id="categoria" name="categoria" class="form-input" required>
-                                <option value="">Selecione...</option>
-                                <option value="Notícia">Notícia</option>
-                                <option value="Vaga">Vaga</option>
-                            </select>
-                            <div id="erro-categoria" class="erro-mensagem"></div>
+                            <label for="titulo" class="form-label">Título</label>
+                            <input type="text" id="titulo" name="titulo" class="form-input" placeholder="Título da Notícia" required minlength="3">
+                            <div id="erro-titulo" class="erro-mensagem"></div>
                         </div>
                         
                         <div class="form-group">
                             <label for="data" class="form-label">Data</label>
-                            <input 
-                                type="date" 
-                                id="data" 
-                                name="data" 
-                                class="form-input" 
-                                required
-                            >
+                            <input type="date" id="data" name="data" class="form-input" required>
                             <div id="erro-data" class="erro-mensagem"></div>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="descricao" class="form-label">Descrição / Resumo *</label>
+
+                        <div id="campos-vaga" style="display: none;">
+                             <div class="form-group">
+                                <label for="empresa" class="form-label">Empresa *</label>
+                                <input type="text" id="empresa" name="empresa" class="form-input" placeholder="Nome da empresa" >
+                                <div id="erro-empresa" class="erro-mensagem"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cidade" class="form-label">Cidade *</label>
+                                <input type="text" id="cidade" name="cidade" class="form-input" placeholder="Cidade da vaga" >
+                                <div id="erro-cidade" class="erro-mensagem"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="curso" class="form-label">Curso/Área *</label>
+                                <input type="text" id="curso" name="curso" class="form-input" placeholder="Curso ou área requerida" >
+                                <div id="erro-curso" class="erro-mensagem"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="salario" class="form-label">Salário (R$) *</label>
+                                <input type="number" id="salario" name="salario" class="form-input" placeholder="0.00" step="0.01" >
+                                <div id="erro-salario" class="erro-mensagem"></div>
+                            </div>
+                        </div>
+
+                        <div id="campos-edital" style="display: none;">
+                            <div class="form-group">
+                                <label for="tipoProjeto" class="form-label">Tipo de Projeto *</label>
+                                <input type="text" id="tipoProjeto" name="tipoProjeto" class="form-input" placeholder="Ex: Pesquisa, Extensão, Inovação">
+                                <div id="erro-tipoProjeto" class="erro-mensagem"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cursosEdital" class="form-label">Cursos Requeridos *</label>
+                                <input type="text" id="cursosEdital" name="cursosEdital" class="form-input" placeholder="Lista de cursos separados por vírgula">
+                                <div id="erro-cursosEdital" class="erro-mensagem"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="bolsa" class="form-label">Valor da Bolsa (R$) *</label>
+                                <input type="number" id="bolsa" name="bolsa" class="form-input" placeholder="0.00" step="0.01">
+                                <div id="erro-bolsa" class="erro-mensagem"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="prazo" class="form-label">Prazo Final *</label>
+                                <input type="date" id="prazo" name="prazo" class="form-input">
+                                <div id="erro-prazo" class="erro-mensagem"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="descricao" class="form-label">Descrição</label>
                             <textarea 
                                 id="descricao" 
                                 name="descricao" 
-                                rows="4" 
-                                class="form-input"
-                                placeholder="Resumo do conteúdo (mínimo 10 caracteres)"
+                                class="form-textarea" 
+                                rows="6"
+                                placeholder="Digite a descrição completa do conteúdo aqui..."
                                 required
                                 minlength="10"
                             ></textarea>
                             <div id="erro-descricao" class="erro-mensagem"></div>
                         </div>
+
+                        <button type="submit" class="btn-submit">Cadastrar Conteúdo</button>
                         
-                        <div class="form-group">
-                            <button type="submit" class="btn-primary">Cadastrar Conteúdo</button>
-                        </div>
-
-                        <p id="confirmacao-mensagem" style="display:none; color: green; font-weight: bold; margin-top: 10px;"></p>
+                        <p id="confirmacao-mensagem" style="display:none; color: green; font-weight: bold; margin-top: 15px;"></p>
                     </form>
-
                 </section>
+
+
+            <div class="back-link-container">
+                <a href="../../index.html" class="back-link">← Voltar para Home</a>
             </div>
         </div>
     </main>
-
     <footer class="footer">
-        </footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sobre o Jornal IF</h4>
+                    <p>Portal de notícias oficial do Instituto Federal da Paraíba, mantendo a comunidade 
+                    acadêmica informada sobre eventos, oportunidades e conquistas.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Úteis</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Portal do IFPB</a></li>
+                        <li><a href="#">SUAP</a></li>
+                        <li><a href="#">Biblioteca Digital</a></li>
+                        <li><a href="#">Calendário Acadêmico</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">Facebook</a>
+                        <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
+                        <a href="#" class="social-link" aria-label="Twitter">Twitter</a>
+                        <a href="#" class="social-link" aria-label="YouTube">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Jornal IF - Instituto Federal da Paraíba. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
-    <script src="../../js/dados.js"></script>
-    <script src="../../js/admin/cadastro.js"></script> 
+    <script src="../../js/admin/cadastro.js"></script>
 </body>
 </html>
