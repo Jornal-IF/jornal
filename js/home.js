@@ -1,4 +1,6 @@
 // renderizando as notícias na página inicial
+import { noticias, vagasEstagio, editais } from "./dados.js";
+
 function renderizandoNotícias() {
     //limpar o conteúdo interno do elemento HTML que possui o id="news-list"
     document.getElementById("news-list").innerHTML = '';
@@ -11,11 +13,11 @@ function renderizandoNotícias() {
                             <time class="news-date" datetime="${noticia.data}">${noticia.data}</time>
                         </div>
                         <p class="news-summary">
-                            ${noticia.descrição}
+                            ${noticia.descricao}
                         </p>
                         <div class="news-footer">
                             <span class="news-likes">
-                                <span class="like-icon" onclick="curtida(this)">♥</span> <span class="curtidas-count">${noticia.curtidas}</span> Curtidas
+                                <span class="like-icon" onclick="curtida(this)">♥</span> <span class="curtidas-count">${noticia.curtidas || 0}</span> Curtidas
                             </span>
                         </div>
                     </article>`;
@@ -40,7 +42,7 @@ function renderizandoProjetosPaginaPrincipal(){
     for (const projeto of editais.slice(0, 3)){
         let html = `<div class="sidebar-item">
                         <h4>${projeto.titulo}</h4>
-                        <p class="item-meta">${projeto.tipo_projeto} • Prazo: ${projeto.prazo}</p>
+                        <p class="item-meta">${projeto.tipoProjeto} • Prazo: ${projeto.prazo}</p>
                     </div>`;
         document.getElementById("list-editais-projetos").innerHTML += html;
     }

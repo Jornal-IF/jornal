@@ -1,3 +1,5 @@
+import { noticias, vagasEstagio, editais } from "../dados.js";
+
 document.addEventListener('DOMContentLoaded', () => {
     // Referências aos elementos principais
     const noticiaForm = document.getElementById('noticiaForm');
@@ -277,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         salario: dadosColetados.salario,
                     };
                 } else if (categoria === 'Edital') {
-                    targetArray = editaisProjetos; // O array deve existir em dados.js
+                    targetArray = editais; // O array deve existir em dados.js
                     tipo = 'Edital de Projeto';
                     novaEntrada = {
                         ...novaEntrada,
@@ -300,7 +302,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Limpar formulário e resetar a visibilidade
                 noticiaForm.reset();
                 toggleCampos(); 
+                
+                
+                localStorage.setItem("noticia", JSON.stringify(noticias))
+                localStorage.setItem("vagas", JSON.stringify(vagasEstagio))
+                localStorage.setItem("projetos", JSON.stringify(editais))
+
+
             }
+            
         });
+    
+        //
+
     }
+
+
+    
 });
