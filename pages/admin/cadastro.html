@@ -30,12 +30,34 @@
                         <li><a href="../vagas.html">Vagas de Estágio</a></li>
                         <li><a href="../editais.html">Editais</a></li>
                         <li><a href="../contato.html">Contato</a></li>
-                        <li><a href="cadastro.html" class="active" style="background-color: #0d8b4f; color: white;">Admin Cadastro</a></li>
+                        <li><a href="#" id="login-trigger" class="active">Login</a></li>
                     </ul>
                 </nav>
+                <div class="user-greeting" id="login-greeting" aria-live="polite"></div>
             </div>
         </div>
     </header>
+
+    <div id="login-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="login-title">
+        <div class="modal-content">
+            <button type="button" class="modal-close" id="login-close" aria-label="Fechar modal">&times;</button>
+            <h3 id="login-title" class="form-title">Login Administrativo</h3>
+            <form id="loginForm" class="contact-form">
+                <div class="form-group">
+                    <label for="loginUsuario" class="form-label">Usuário</label>
+                    <input type="text" id="loginUsuario" name="loginUsuario" class="form-input" placeholder="Digite seu usuário" required>
+                    <div id="erro-loginUsuario" class="erro-mensagem"></div>
+                </div>
+                <div class="form-group">
+                    <label for="loginSenha" class="form-label">Senha</label>
+                    <input type="password" id="loginSenha" name="loginSenha" class="form-input" placeholder="Digite sua senha" required>
+                    <div id="erro-loginSenha" class="erro-mensagem"></div>
+                </div>
+                <button type="submit" class="btn-submit">Entrar</button>
+                <p id="login-mensagem" class="login-mensagem" aria-live="polite"></p>
+            </form>
+        </div>
+    </div>
 
     <main class="main-content">
         <div class="container">
