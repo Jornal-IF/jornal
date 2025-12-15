@@ -5,16 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const noticiaForm = document.getElementById('noticiaForm');
     const categoriaSelect = document.getElementById('categoria');
     const confirmacaoMensagem = document.getElementById('confirmacao-mensagem');
-    const loginTrigger = document.getElementById('login-trigger');
-    const loginModal = document.getElementById('login-modal');
-    const loginClose = document.getElementById('login-close');
-    const loginForm = document.getElementById('loginForm');
-    const loginMensagem = document.getElementById('login-mensagem');
-    const loginGreeting = document.getElementById('login-greeting');
     
     // Elementos de agrupamento que controlam a visibilidade no HTML
     const camposVaga = document.getElementById('campos-vaga');
     const camposEdital = document.getElementById('campos-edital');
+
+    // elemento da saudação
+    const saudacao = document.getElementById('login-greeting')
 
     // Funções auxiliares para mensagens de erro
     function exibirErro(idCampo, mensagem) {
@@ -26,64 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function limparErros() {
         document.querySelectorAll('.erro-mensagem').forEach(el => el.textContent = '');
-    }
-
-    function limparErrosLogin() {
-        const loginErros = ['erro-loginUsuario', 'erro-loginSenha'];
-        loginErros.forEach(id => {
-            const el = document.getElementById(id);
-            if (el) {
-                el.textContent = '';
-            }
-        });
-    }
-
-    function abrirModalLogin() {
-        if (!loginModal) return;
-        loginModal.classList.add('open');
-        loginModal.setAttribute('aria-hidden', 'false');
-    }
-
-    function fecharModalLogin() {
-        if (!loginModal) return;
-        loginModal.classList.remove('open');
-        loginModal.setAttribute('aria-hidden', 'true');
-        if (loginForm) {
-            loginForm.reset();
-        }
-        limparErrosLogin();
-        if (loginMensagem) {
-            loginMensagem.textContent = '';
-        }
-    }
-
-    function registrarSessaoLogin(usuario) {
-        try {
-            sessionStorage.setItem('adminUsuario', usuario);
-        } catch (err) {
-            // Fallback: cookie de sessão válido até fechar o navegador
-            document.cookie = `adminUsuario=${encodeURIComponent(usuario)}; path=/; SameSite=Lax`;
-        }
-        atualizarSaudacao(usuario);
-    }
-
-    function obterUsuarioPersistido() {
-        const armazenado = sessionStorage.getItem('adminUsuario');
-        if (armazenado) return armazenado;
-
-        const cookie = document.cookie
-            .split(';')
-            .map(part => part.trim())
-            .find(part => part.startsWith('adminUsuario='));
-        if (cookie) {
-            return decodeURIComponent(cookie.split('=')[1]);
-        }
-        return '';
-    }
-
-    function atualizarSaudacao(usuario) {
-        if (!loginGreeting) return;
-        loginGreeting.textContent = usuario ? `Olá, ${usuario}` : '';
     }
 
     function toggleCampos() {
@@ -108,53 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (categoriaSelect) {
         categoriaSelect.addEventListener('change', toggleCampos);
     }
-
-    atualizarSaudacao(obterUsuarioPersistido());
-
-    if (loginTrigger) {
-        loginTrigger.addEventListener('click', event => {
-            event.preventDefault();
-            abrirModalLogin();
-        });
-    }
-
-    if (loginClose) {
-        loginClose.addEventListener('click', fecharModalLogin);
-    }
-
-    if (loginModal) {
-        loginModal.addEventListener('click', event => {
-            if (event.target === loginModal) {
-                fecharModalLogin();
-            }
-        });
-    }
-
-    if (loginForm) {
-        loginForm.addEventListener('submit', event => {
-            event.preventDefault();
-            limparErrosLogin();
-
-            const usuario = document.getElementById('loginUsuario')?.value.trim() || '';
-            const senha = document.getElementById('loginSenha')?.value.trim() || '';
-
-            let valido = true;
-            if (!usuario) {
-                exibirErro('loginUsuario', 'Informe o usuário.');
-                valido = false;
-            }
-            if (!senha) {
-                exibirErro('loginSenha', 'Informe a senha.');
-                valido = false;
-            }
-
-            if (valido && loginMensagem) {
-                registrarSessaoLogin(usuario);
-                loginMensagem.textContent = 'Login realizado com sucesso.';
-            }
-        });
-    }
-
 
     function validarFormulario(dados) {
         let valido = true;
@@ -312,11 +204,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
         });
-    
-        //
-
     }
 
+    function mostrarSaudacao() {
+        const usuario = sessionStorage.getItem('usuarioLogado')
 
-    
+        if(usuario){
+            saudacao.textContent = `Olá, ${usuario}!`
+        }
+    }
+
+    mostrarSaudacao()
 });

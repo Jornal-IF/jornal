@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Jornal IF</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/cadastroUsuario.css">
+</head>
+<body>
+    <!-- Cabeçalho fixo -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="../../assets/images/JIFPNG.png" alt="Logo do Jornal IF" class="logo-img">
+                    <div class="logo-text">
+                        <h1>Jornal IF</h1>
+                        <p class="tagline">Portal de Notícias do IFPB</p>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../vagas.html">Vagas de Estágio</a></li>
+                        <li><a href="../editais.html">Editais</a></li>
+                        <li><a href="../contato.html">Contato</a></li>
+                        <li><a href="cadastro.html">Cadastro de Notícias e Vagas</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Área de Login/Cadastro -->
+            <div class="login-container" id="area-login">
+                <div class="login-header">
+                    <h1>Acesso Administrativo</h1>
+                    <p>Entre ou cadastre-se para continuar</p>
+                </div>
+
+                <!-- Abas -->
+                <div class="tabs">
+                    <div class="tab active" id="tab-login">Login</div>
+                    <div class="tab" id="tab-cadastro">Cadastrar</div>
+                </div>
+
+                <!-- Formulário de Login -->
+                <div class="form-section active" id="form-login">
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginUsuario">Usuário</label>
+                            <input type="text" id="loginUsuario" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginSenha">Senha</label>
+                            <input type="password" id="loginSenha" required>
+                        </div>
+                        <button type="submit" class="btn-login">Entrar</button>
+                    </form>
+                </div>
+
+                <!-- Formulário de Cadastro -->
+                <div class="form-section" id="form-cadastro">
+                    <form id="cadastroForm">
+                        <div class="form-group">
+                            <label for="cadastroUsuario">Usuário</label>
+                            <input type="text" id="cadastroUsuario" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cadastroSenha">Senha</label>
+                            <input type="password" id="cadastroSenha" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cadastroSenhaConfirma">Confirmar Senha</label>
+                            <input type="password" id="cadastroSenhaConfirma" required>
+                        </div>
+                        <button type="submit" class="btn-login">Cadastrar</button>
+                    </form>
+                </div>
+
+                <div class="mensagem" id="mensagem"></div>
+            </div>
+
+            <!-- Área Logada -->
+            <div class="login-container area-logada" id="area-logada">
+                <div class="saudacao" id="saudacao"></div>
+                <p style="text-align: center; margin-bottom: 1rem;">Você está logado no sistema.</p>
+                <a href="cadastro.html" class="btn-login" style="display: block; text-decoration: none; text-align: center;">
+                    Ir para Cadastro de Notícias
+                </a>
+                <button class="btn-logout" id="btnLogout">Sair</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 Jornal IF - Instituto Federal da Paraíba. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/admin/loginCadastro.js"></script>
+</body>
+</html>
