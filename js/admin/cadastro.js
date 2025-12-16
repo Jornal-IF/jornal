@@ -1,3 +1,5 @@
+import { noticias, vagasEstagio, editais } from "../dados.js";
+
 document.addEventListener('DOMContentLoaded', () => {
     // Referências aos elementos principais
     const noticiaForm = document.getElementById('noticiaForm');
@@ -7,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Elementos de agrupamento que controlam a visibilidade no HTML
     const camposVaga = document.getElementById('campos-vaga');
     const camposEdital = document.getElementById('campos-edital');
+
+    // elemento da saudação
+    const saudacao = document.getElementById('login-greeting')
 
     // Funções auxiliares para mensagens de erro
     function exibirErro(idCampo, mensagem) {
@@ -42,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (categoriaSelect) {
         categoriaSelect.addEventListener('change', toggleCampos);
     }
-
 
     function validarFormulario(dados) {
         let valido = true;
@@ -167,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         salario: dadosColetados.salario,
                     };
                 } else if (categoria === 'Edital') {
-                    targetArray = editaisProjetos; // O array deve existir em dados.js
+                    targetArray = editais; // O array deve existir em dados.js
                     tipo = 'Edital de Projeto';
                     novaEntrada = {
                         ...novaEntrada,
@@ -190,7 +194,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Limpar formulário e resetar a visibilidade
                 noticiaForm.reset();
                 toggleCampos(); 
+                
+                
+                localStorage.setItem("noticia", JSON.stringify(noticias))
+                localStorage.setItem("vagas", JSON.stringify(vagasEstagio))
+                localStorage.setItem("projetos", JSON.stringify(editais))
+
+
             }
+            
         });
     }
+
+    function mostrarSaudacao() {
+        const usuario = sessionStorage.getItem('usuarioLogado')
+
+        if(usuario){
+            saudacao.textContent = `Olá, ${usuario}!`
+        }
+    }
+
+    mostrarSaudacao()
 });

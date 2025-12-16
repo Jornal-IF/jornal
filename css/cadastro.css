@@ -226,3 +226,67 @@
 .btn-ouvidoria:hover {
     background: var(--primary-green);
 }
+
+.user-greeting {
+    color: var(--accent-white);
+    font-weight: 600;
+    margin-left: auto;
+}
+
+/* Mais respiro no cabeçalho da página de cadastro */
+.header-content {
+    gap: var(--spacing-lg);
+}
+
+.nav ul {
+    gap: var(--spacing-lg);
+}
+
+/* Modal de login */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 1200;
+}
+
+.modal.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: var(--accent-white);
+    padding: var(--spacing-lg);
+    border-radius: 10px;
+    box-shadow: var(--shadow-lg);
+    width: min(480px, 90vw);
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    background: transparent;
+    border: none;
+    font-size: 1.75rem;
+    color: var(--dark-gray);
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: var(--secondary-green);
+}
+
+.login-mensagem {
+    margin-top: var(--spacing-xs);
+    font-weight: 500;
+}
