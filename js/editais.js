@@ -1,3 +1,5 @@
+import { editais } from "./dados.js";
+
 function renderizarEditais(editais){
     document.getElementById("editais-list").innerHTML = "";
     let conteudoHTML = "";
@@ -6,7 +8,7 @@ function renderizarEditais(editais){
         conteudoHTML += `<article class="edital-card">
                     <div class="edital-header">
                         <h4 class="edital-title">${edital.titulo}</h4>
-                        <span class="edital-badge pesquisa">${edital.tipo_projeto}</span>
+                        <span class="edital-badge pesquisa">${edital.tipoProjeto}</span>
                     </div>
                     <div class="edital-info">
                         <div class="info-item">
@@ -20,10 +22,10 @@ function renderizarEditais(editais){
                         </div>
                     </div>
                     <p class="edital-description">
-                        ${edital.descrição}
+                        ${edital.descricao}
                     </p>
                     <div class="edital-footer">
-                        <span class="edital-number">${edital.data_publicação}</span>
+                        <span class="edital-number">${edital.data}</span>
                         <button class="btn-apply">Inscrever-se</button>
                     </div>
                 </article>`
@@ -34,13 +36,14 @@ function renderizarEditais(editais){
 
 function filtrarEditais(){
     const tipo = document.getElementById('tipo').value;
-    const curso = document.getElementById('curso').value;
+    const curso = document.getElementById('curso').value.toLowerCase();
     const termo_digitado = document.getElementById('buscador-editais').value.toLowerCase();
 
     const editais_filtrados = editais.filter(edital => {
-        const filtro_tipo = tipo === "" || tipo === edital.tipo_projeto;
-        const filtro_curso = curso === "" || edital.curso_tag.includes(curso);
-        const filtro_termo = termo_digitado === "" || edital.titulo.toLowerCase().includes(termo_digitado);
+        const filtro_tipo = !tipo || tipo === edital.tipoProjeto;
+        const cursos = (edital.cursos || "").toLowerCase();
+        const filtro_curso = !curso || cursos.includes(curso);
+        const filtro_termo = !termo_digitado || edital.titulo.toLowerCase().includes(termo_digitado);
 
         return filtro_curso && filtro_tipo && filtro_termo;
     })
