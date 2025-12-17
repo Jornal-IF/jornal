@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const confirmacaoMensagem = document.getElementById('confirmacao-mensagem');
     
     // Elementos de agrupamento que controlam a visibilidade no HTML
+    const camposNoticia = document.getElementById('campos-noticia');
     const camposVaga = document.getElementById('campos-vaga');
     const camposEdital = document.getElementById('campos-edital');
 
@@ -25,28 +26,27 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.erro-mensagem').forEach(el => el.textContent = '');
     }
 
-    function toggleCampos() {
-        const categoria = categoriaSelect.value;
-        
-        // Esconde todos os grupos por padrão
-        if (camposVaga) camposVaga.style.display = 'none';
-        if (camposEdital) camposEdital.style.display = 'none';
+    // Função para exibir/ocultar campos com base na categoria selecionada
+    categoriaSelect.addEventListener('change', () => {
+        const categoriaSelecionada = categoriaSelect.value;
 
-        limparErros(); // Limpa mensagens de erro ao trocar de categoria
+        // Oculta todos os campos inicialmente
+        camposNoticia.style.display = 'none';
+        camposVaga.style.display = 'none';
+        camposEdital.style.display = 'none';
 
-        // Mostra o grupo correto
-        if (categoria === 'Vaga') {
-            if (camposVaga) camposVaga.style.display = 'block';
-        } else if (categoria === 'Edital') { 
-            if (camposEdital) camposEdital.style.display = 'block'; 
+        // Exibe os campos correspondentes à categoria selecionada
+        if (categoriaSelecionada === 'Notícia') {
+            camposNoticia.style.display = 'block';
+        } else if (categoriaSelecionada === 'Vaga') {
+            camposVaga.style.display = 'block';
+        } else if (categoriaSelecionada === 'Edital') {
+            camposEdital.style.display = 'block';
         }
-    }
+    });
 
-    // Inicializa a visibilidade e adiciona o listener de mudança
-    toggleCampos();
-    if (categoriaSelect) {
-        categoriaSelect.addEventListener('change', toggleCampos);
-    }
+    // Inicializa a visibilidade com base na seleção atual
+    categoriaSelect.dispatchEvent(new Event('change'));
 
     function validarFormulario(dados) {
         let valido = true;
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 valido = false;
             }
             if (!dados.curso.trim()) {
-                exibirErro('curso', 'O curso/área é obrigatório.');
+                exibirErro('curso', 'Selecione um curso ou área válida.');
                 valido = false;
             }
             if (dados.salario <= 0) {
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Limpar formulário e resetar a visibilidade
                 noticiaForm.reset();
-                toggleCampos(); 
+                categoriaSelect.dispatchEvent(new Event('change')); 
                 
                 
                 localStorage.setItem("noticia", JSON.stringify(noticias))
@@ -205,6 +205,16 @@ document.addEventListener('DOMContentLoaded', () => {
             
         });
     }
+
+    const form = document.getElementById('noticiaForm');
+    // impede do usuário enviar um submit sem selecionar a categoria.
+    form.addEventListener('submit', (event) => {
+        const categoriaNoticia = document.getElementById('categoriaNoticia');
+        if (!categoriaNoticia.value) {
+            event.preventDefault();
+            document.getElementById('erro-categoriaNoticia').textContent = 'Por favor, selecione uma categoria.';
+        }
+    });
 
     function mostrarSaudacao() {
         const usuario = sessionStorage.getItem('usuarioLogado')

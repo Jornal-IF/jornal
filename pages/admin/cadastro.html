@@ -82,10 +82,24 @@
                             </select>
                             <div id="erro-categoria" class="erro-mensagem"></div>
                         </div>
-
+                        <div id="campos-noticia" style="display: none;">
+                        <div class="form-group">
+                            <label for="categoriaNoticia" class="form-label">Categoria da Notícia </label>
+                            <select id="categoriaNoticia" name="categoriaNoticia" class="form-select" required>
+                                <option value="">Selecione uma categoria...</option>
+                                <option value="Educação">Educação</option>
+                                <option value="Tecnologia">Tecnologia</option>
+                                <option value="Cultura">Cultura</option>
+                                <option value="Esportes">Esportes</option>
+                                <option value="Saúde">Saúde</option>
+                            </select>
+                            <div id="erro-categoriaNoticia" class="erro-mensagem"></div>
+                        </div>
+                    </div>
+                    <!-- Padroniza o título para todos os formulários-->
                         <div class="form-group">
                             <label for="titulo" class="form-label">Título</label>
-                            <input type="text" id="titulo" name="titulo" class="form-input" placeholder="Título da Notícia" required minlength="3">
+                            <input type="text" id="titulo" name="titulo" class="form-input" placeholder="Título do Conteúdo" required minlength="3">
                             <div id="erro-titulo" class="erro-mensagem"></div>
                         </div>
                         
@@ -109,7 +123,16 @@
                             
                             <div class="form-group">
                                 <label for="curso" class="form-label">Curso/Área *</label>
-                                <input type="text" id="curso" name="curso" class="form-input" placeholder="Curso ou área requerida" >
+                                <select id="curso" name="cursosEdital[]" class="form-select" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="Análise e Desenvolvimento de Sistemas">Análise e Desenvolvimento de Sistemas</option>
+                                    <option value="Engenharia Civil">Engenharia Civil</option>
+                                    <option value="Engenharia de Controle e Automação">Engenharia de Controle e Automação</option>
+                                    <option value="Matemática">Matemática</option>
+                                    <option value="Técnico Eletromecânica">Técnico Eletromecânica</option>
+                                    <option value="Técnico Edificações">Técnico Edificações</option>
+                                    <option value="Técnico Informática">Técnico Informática</option>
+                                </select>
                                 <div id="erro-curso" class="erro-mensagem"></div>
                             </div>
                             <div class="form-group">
@@ -122,14 +145,31 @@
                         <div id="campos-edital" style="display: none;">
                             <div class="form-group">
                                 <label for="tipoProjeto" class="form-label">Tipo de Projeto *</label>
-                                <input type="text" id="tipoProjeto" name="tipoProjeto" class="form-input" placeholder="Ex: Pesquisa, Extensão, Inovação">
+                                <select id="tipoProjeto" name="tipoProjeto" class="form-select" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="Pesquisa">Pesquisa</option>
+                                    <option value="Extensão">Extensão</option>
+                                    <option value="Inovação">Inovação</option>
+                                    <option value="Desenvolvimento">Desenvolvimento</option>
+                                </select>
                                 <div id="erro-tipoProjeto" class="erro-mensagem"></div>
                             </div>
+
                             <div class="form-group">
                                 <label for="cursosEdital" class="form-label">Cursos Requeridos *</label>
-                                <input type="text" id="cursosEdital" name="cursosEdital" class="form-input" placeholder="Lista de cursos separados por vírgula">
+                                <select id="cursosEdital" name="cursosEdital[]" class="form-select" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="Análise e Desenvolvimento de Sistemas">Análise e Desenvolvimento de Sistemas</option>
+                                    <option value="Engenharia Civil">Engenharia Civil</option>
+                                    <option value="Engenahria de Controle e Automação">Engenharia de Controle e Automação</option>
+                                    <option value="Matemática">Matemática</option>
+                                    <option value="Técnico Eletromecânica">Técnico Eletromecânica</option>
+                                    <option value="Técnico Edificações">Técnico Edificações</option>
+                                    <option value="Técnico Informática">Técnico Infórmatica</option>                               
+                                </select>
                                 <div id="erro-cursosEdital" class="erro-mensagem"></div>
                             </div>
+                            
                             <div class="form-group">
                                 <label for="bolsa" class="form-label">Valor da Bolsa (R$) *</label>
                                 <input type="number" id="bolsa" name="bolsa" class="form-input" placeholder="0.00" step="0.01">
@@ -145,62 +185,62 @@
                         <div class="form-group full-width">
                             <label for="descricao" class="form-label">Descrição</label>
                             <textarea 
-                                id="descricao" 
-                                name="descricao" 
-                                class="form-textarea" 
-                                rows="6"
-                                placeholder="Digite a descrição completa do conteúdo aqui..."
-                                required
-                                minlength="10"
+                            id="descricao" 
+                            name="descricao" 
+                            class="form-textarea" 
+                            rows="6"
+                            placeholder="Digite a descrição completa do conteúdo aqui..."
+                            required
+                            minlength="10"
                             ></textarea>
                             <div id="erro-descricao" class="erro-mensagem"></div>
                         </div>
-
+                        
                         <button type="submit" class="btn-submit">Cadastrar Conteúdo</button>
                         
                         <p id="confirmacao-mensagem" style="display:none; color: green; font-weight: bold; margin-top: 15px;"></p>
                     </form>
                 </section>
-
-
-            <div class="back-link-container">
-                <a href="../../index.html" class="back-link">← Voltar para Home</a>
+                
+                
+                <div class="back-link-container">
+                    <a href="../../index.html" class="back-link">← Voltar para Home</a>
+                </div>
             </div>
-        </div>
-    </main>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Sobre o Jornal IF</h4>
-                    <p>Portal de notícias oficial do Instituto Federal da Paraíba, mantendo a comunidade 
-                    acadêmica informada sobre eventos, oportunidades e conquistas.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Links Úteis</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Portal do IFPB</a></li>
-                        <li><a href="#">SUAP</a></li>
-                        <li><a href="#">Biblioteca Digital</a></li>
-                        <li><a href="#">Calendário Acadêmico</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Redes Sociais</h4>
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">Facebook</a>
-                        <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
-                        <a href="#" class="social-link" aria-label="Twitter">Twitter</a>
-                        <a href="#" class="social-link" aria-label="YouTube">YouTube</a>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4>Sobre o Jornal IF</h4>
+                        <p>Portal de notícias oficial do Instituto Federal da Paraíba, mantendo a comunidade 
+                            acadêmica informada sobre eventos, oportunidades e conquistas.</p>
+                        </div>
+                        <div class="footer-section">
+                            <h4>Links Úteis</h4>
+                            <ul class="footer-links">
+                                <li><a href="#">Portal do IFPB</a></li>
+                                <li><a href="#">SUAP</a></li>
+                                <li><a href="#">Biblioteca Digital</a></li>
+                                <li><a href="#">Calendário Acadêmico</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h4>Redes Sociais</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-link" aria-label="Facebook">Facebook</a>
+                                <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
+                                <a href="#" class="social-link" aria-label="Twitter">Twitter</a>
+                                <a href="#" class="social-link" aria-label="YouTube">YouTube</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 Jornal IF - Instituto Federal da Paraíba. Todos os direitos reservados.</p>
                     </div>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Jornal IF - Instituto Federal da Paraíba. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
+            </footer>
+            
     <script src="../../js/admin/cadastro.js" type="module"></script>
 </body>
 </html>
