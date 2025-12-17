@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Verifica se o usuário já está logado
+    const usuarioLogado = sessionStorage.getItem('usuarioLogado')
+    if (usuarioLogado) {
+        window.location.href = 'cadastro.html'
+    }
+
     const formulario = document.getElementById('loginForm')
     const loginDoUsuario = document.getElementById('loginUsuario')
     const senhaDoUsuario = document.getElementById('loginSenha')

@@ -1,3 +1,5 @@
+import { vagasEstagio } from "./dados.js";
+
 // renderização dinâmica das vagas de estágio filtradas
 function renderizarVagasEstagio(vagas){
     document.getElementById("vagas-list").innerHTML = "";
@@ -14,14 +16,14 @@ function renderizarVagasEstagio(vagas){
                                 <strong>Empresa:</strong> ${vaga.empresa}
                             </div>
                             <div class="info-item">
-                                <strong>Salário:</strong> ${vaga.salário}
+                                <strong>Salário:</strong> ${vaga.salario}
                             </div>
                             <div class="info-item">
                                 <strong>Local:</strong> ${vaga.cidade}
                             </div>
                         </div>
                         <p class="vaga-description">
-                            ${vaga.descrição}
+                            ${vaga.descricao}
                         </p>
                         <div class="vaga-footer">
                             <span class="vaga-date">Publicado em: ${vaga.data}</span>
@@ -40,9 +42,9 @@ function filtrarVagas(){
     const termo_digitado = document.getElementById('buscador-vagas').value.toLowerCase();
 
     const vagas_filtradas = vagasEstagio.filter(vaga => {
-        const filtro_curso = curso === "" || curso === vaga.curso_tag;
-        const filtro_cidade = cidade === "" || cidade === vaga.cidade;  
-        const filtro_termo = termo_digitado === "" || vaga.titulo.toLowerCase().includes(termo_digitado);
+        const filtro_curso = !curso || curso === vaga.curso;
+        const filtro_cidade = !cidade || cidade === vaga.cidade;  
+        const filtro_termo = !termo_digitado || vaga.titulo.toLowerCase().includes(termo_digitado);
 
         return filtro_curso && filtro_cidade && filtro_termo;
     });
