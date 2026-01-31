@@ -1,9 +1,23 @@
 // criando arrays de objetos para as notícias, vagas de estágio e editais.
-// por enquanto estático, futuramente será dinâmico.
-export const noticias =  JSON.parse(localStorage.getItem('noticia')) || [] 
+
+async function APINoticias() {
+    let data = await fetch('http://localhost:3003/noticias');
+    let noticiasAPI = await data.json();
+    return noticiasAPI;
+}
+export const noticias = await APINoticias();
 
 
-export const vagasEstagio =  JSON.parse(localStorage.getItem('vagas')) || [] 
+async function APIVagas() {
+    let data = await fetch('http://localhost:3003/vagas');
+    let vagasAPI = await data.json();
+    return vagasAPI;
+}
+export const vagasEstagio = await APIVagas();
 
-
- export const editais =  JSON.parse(localStorage.getItem('projetos')) || [] 
+async function APIProjetos() {
+    let data = await fetch('http://localhost:3003/projetos');
+    let projetosAPI = await data.json();
+    return projetosAPI;
+}
+export const editais = await APIProjetos();
