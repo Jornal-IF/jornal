@@ -1,6 +1,4 @@
-import { noticias, vagasEstagio, editais } from "../dados.js";
-
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     // Referências aos elementos principais
     const noticiaForm = document.getElementById('noticiaForm');
     const categoriaSelect = document.getElementById('categoria');
@@ -116,13 +114,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     if (noticiaForm) {
-        noticiaForm.addEventListener('submit', function(event) {
+        noticiaForm.addEventListener('submit', async function(event) {
             event.preventDefault(); // Impede o recarregamento da página
+            console.log('Formulário enviado!'); // DEBUG
 
             confirmacaoMensagem.style.display = 'none';
             confirmacaoMensagem.textContent = '';
 
             const categoria = categoriaSelect.value;
+            console.log('Categoria:', categoria); // DEBUG
 
             // Objeto para coletar todos os campos possíveis
             const dadosColetados = {
@@ -153,15 +153,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     descricao: dadosColetados.descricao,
                 };
 
-                let targetArray;
                 let tipo = '';
+                let URL = 'http://localhost:3003/';
 
-                // Define o array de destino e finaliza o objeto
+                // Define o endpoint e finaliza o objeto
                 if (categoria === 'Notícia') {
-                    targetArray = noticias;
+                    URL += 'noticias';
                     tipo = 'Notícia';
                 } else if (categoria === 'Vaga') {
-                    targetArray = vagasEstagio;
+                    URL += 'vagas';
                     tipo = 'Vaga de Estágio';
                     novaEntrada = {
                         ...novaEntrada,
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         salario: dadosColetados.salario,
                     };
                 } else if (categoria === 'Edital') {
-                    targetArray = editais; // O array deve existir em dados.js
+                    URL += 'projetos';
                     tipo = 'Edital de Projeto';
                     novaEntrada = {
                         ...novaEntrada,
@@ -182,39 +182,37 @@ document.addEventListener('DOMContentLoaded', () => {
                     };
                 }
 
-                // Adiciona ao array global
-                if (targetArray) {
-                    targetArray.push(novaEntrada);
+                // Enviando para JSON Server
+                try {
+                    const response = await fetch(URL, {
+                        method: 'POST',
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(novaEntrada)
+                    });
+                    
+                    if (response.ok) {
+                        // Exibir mensagem de confirmação
+                        confirmacaoMensagem.textContent = `${tipo} cadastrada com sucesso!`;
+                        confirmacaoMensagem.style.display = 'block';
+                        
+                        // Após 3 segundos, limpar formulário e resetar a visibilidade
+                        setTimeout(() => {
+                            noticiaForm.reset();
+                            categoriaSelect.dispatchEvent(new Event('change'));
+                            confirmacaoMensagem.style.display = 'none';
+                        }, 3000);
+                    } else {
+                        throw new Error('Erro ao salvar');
+                    }
+                } catch (error) {
+                    confirmacaoMensagem.textContent = `Erro ao cadastrar. Verifique se o servidor está rodando.`;
+                    confirmacaoMensagem.style.display = 'block';
+                    console.error('Erro:', error);
                 }
-
-                // Exibir mensagem de confirmação
-                confirmacaoMensagem.textContent = `${tipo} cadastrada com sucesso! (Dados adicionados ao array)`;
-                confirmacaoMensagem.style.display = 'block';
-                
-                // Limpar formulário e resetar a visibilidade
-                noticiaForm.reset();
-                categoriaSelect.dispatchEvent(new Event('change')); 
-                
-                
-                localStorage.setItem("noticia", JSON.stringify(noticias))
-                localStorage.setItem("vagas", JSON.stringify(vagasEstagio))
-                localStorage.setItem("projetos", JSON.stringify(editais))
-
-
             }
             
         });
     }
-
-    const form = document.getElementById('noticiaForm');
-    // impede do usuário enviar um submit sem selecionar a categoria.
-    form.addEventListener('submit', (event) => {
-        const categoriaNoticia = document.getElementById('categoriaNoticia');
-        if (!categoriaNoticia.value) {
-            event.preventDefault();
-            document.getElementById('erro-categoriaNoticia').textContent = 'Por favor, selecione uma categoria.';
-        }
-    });
 
     function mostrarSaudacao() {
         const usuario = sessionStorage.getItem('usuarioLogado')
