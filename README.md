@@ -1,138 +1,97 @@
-# Jornal IF - Portal de Notícias do IFPB
+# 📰 Jornal IF
 
-Portal de notícias universitário desenvolvido para o Instituto Federal da Paraíba (IFPB), utilizando apenas HTML5 e CSS3.
+Portal de notícias do Instituto Federal da Paraíba (IFPB).
 
-## 📋 Descrição
+## 🚀 Como Rodar o Projeto
 
-O Jornal IF é um site de notícias acadêmico com design moderno, responsivo e de fácil navegação. O projeto foi desenvolvido com foco em semântica HTML5 e estilização pura com CSS3, sem uso de frameworks ou JavaScript.
+### 1. Instale o Node.js
 
-## 🎨 Características
+Baixe e instale o Node.js: https://nodejs.org/
 
-- **Design Responsivo**: Layout adaptável para desktop, tablet e mobile
-- **Cores Institucionais**: Paleta baseada nas cores verde e branco do IFPB
-- **Acessibilidade**: Estrutura semântica e navegação clara
-- **Performance**: Sem dependências de frameworks pesados
+### 2. Clone o Projeto
+
+```bash
+git clone https://github.com/Jornal-IF/jornal.git
+cd jornal
+```
+
+### 3. Instale as Dependências
+
+```bash
+npm install
+```
+
+### 4. Inicie o Servidor
+
+```bash
+npm run server
+```
+
+O servidor vai rodar em: `http://localhost:3000`
+
+### 5. Abra o Site
+
+**Opção A - VS Code (Recomendado):**
+1. Instale a extensão [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+2. Clique com botão direito em `index.html`
+3. Selecione "Open with Live Server"
+
+**Opção B - Navegador:**
+- Abra o arquivo `index.html` diretamente no navegador
 
 ## 📁 Estrutura do Projeto
 
 ```
-jornal-if/
-│
-├── index.html           # Página inicial com notícias
-├── vagas.html          # Página de vagas de estágio
-├── editais.html        # Página de editais e oportunidades
-├── contato.html        # Página de contato
-│
-├── css/
-│   └── style.css       # Arquivo de estilos principal
-│
-└── assets/             # Pasta para imagens (vazia por enquanto)
+jornal/
+├── index.html       # Página principal
+├── vagas.html       # Página de vagas
+├── editais.html     # Página de editais
+├── contato.html     # Página de contato
+├── css/             # Estilos
+├── js/              # Scripts
+├── assets/          # Imagens
+└── db.json          # Dados do site
 ```
 
-## 🏠 Páginas
+## 🔧 Editando Conteúdo
 
-### 1. Home (index.html)
-- Cabeçalho com logo e menu de navegação
-- Listagem de notícias com data e resumo
-- Sidebar com:
-  - Resumo de vagas de estágio
-  - Resumo de editais
-  - Calendário de eventos
-  - Espaço para propaganda (AdSense)
-- Rodapé com informações e links
+Para adicionar ou editar notícias, vagas e editais, edite o arquivo `db.json`:
 
-### 2. Vagas de Estágio (vagas.html)
-- Sistema de busca e filtros (layout apenas)
-- Lista detalhada de vagas com:
-  - Título da vaga
-  - Área de atuação
-  - Carga horária
-  - Descrição completa
-  - Botão de candidatura
+```json
+{
+  "noticias": [
+    {
+      "id": 1,
+      "titulo": "Título da notícia",
+      "data": "2025-02-10",
+      "resumo": "Resumo curto...",
+      "conteudo": "Texto completo...",
+      "imagem": "assets/foto.jpg"
+    }
+  ]
+}
+```
 
-### 3. Editais (editais.html)
-- Três seções principais:
-  - Projetos de Pesquisa
-  - Projetos de Extensão
-  - Bolsas de Auxílio Estudantil
-- Filtros por tipo e área
-- Informações detalhadas de cada edital
+## ❗ Problemas Comuns
 
-### 4. Contato (contato.html)
-- Formulário de contato completo
-- Informações institucionais
-- Links para redes sociais
-- Acesso à ouvidoria
+**Erro de CORS:**
+- Use o Live Server no VS Code em vez de abrir o arquivo diretamente
 
-## 🎨 Paleta de Cores
+**Servidor não inicia:**
+- Verifique se a porta 3000 está livre
+- Rode `npm install` novamente
 
-- **Verde Primário**: #1a5c37
-- **Verde Secundário**: #2d7a4f
-- **Verde Claro**: #4a9d6f
-- **Verde Escuro**: #0f3d24
-- **Branco**: #ffffff
-- **Cinza Claro**: #f5f5f5
-- **Texto**: #2c3e50
+**Notícias não aparecem:**
+- Confirme que o servidor está rodando (`npm run server`)
+- Abra o console do navegador (F12) para ver erros
 
-## 🔤 Tipografia
+## 🎨 Tecnologias
 
-- **Fonte Principal**: Roboto (Google Fonts)
-- **Pesos**: 300 (Light), 400 (Regular), 500 (Medium), 700 (Bold)
-
-## 📱 Responsividade
-
-O site possui três breakpoints principais:
-
-- **Desktop**: > 992px
-- **Tablet**: 768px - 992px
-- **Mobile**: < 768px
-
-### Recursos Responsivos:
-- Grid flexível que se adapta ao tamanho da tela
-- Menu de navegação que se ajusta em telas menores
-- Cartões de notícias e vagas otimizados para mobile
-- Sidebar que se move para baixo em telas menores
-
-## 🚀 Como Usar
-
-1. Clone ou baixe o projeto
-2. Abra o arquivo `index.html` em seu navegador
-3. Navegue entre as páginas através do menu
-
-Não há necessidade de servidor web ou configurações adicionais.
-
-## ✨ Destaques Técnicos
-
-### HTML5 Semântico
-- Uso adequado de tags semânticas (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`)
-- Estrutura acessível e organizada
-- Meta tags para SEO e responsividade
-
-### CSS3 Moderno
-- CSS Grid e Flexbox para layouts
-- Variáveis CSS (Custom Properties) para facilitar manutenção
-- Transições suaves e efeitos de hover
-- Media queries para responsividade
-- Box-shadow e border-radius para profundidade visual
-
-## 🎯 Funcionalidades Futuras (com JavaScript)
-
-- Sistema de busca funcional
-- Filtros dinâmicos
-- Calendário interativo
-- Validação de formulário
-- Carrossel de notícias
-- Modo escuro/claro
-- Integração com banco de dados
-
-## 📝 Licença
-
-Este é um projeto educacional desenvolvido para fins de demonstração.
-
-## 👨‍💻 Desenvolvimento
-
-Desenvolvido com HTML5 e CSS3 puros, seguindo as melhores práticas de desenvolvimento web.
+- HTML5
+- CSS3
+- JavaScript
+- JSON Server (API fake)
 
 ---
 
-**Jornal IF** © 2025 - Instituto Federal da Paraíba
+**Precisa de ajuda?** Abra uma [issue](https://github.com/Jornal-IF/jornal/issues)
