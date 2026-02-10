@@ -196,16 +196,33 @@
                             <div id="erro-descricao" class="erro-mensagem"></div>
                         </div>
                         
-                        <button type="submit" class="btn-submit">Cadastrar Conteúdo</button>
+                        <button type="submit" class="btn-submit" id="btn-salvar">Cadastrar Conteúdo</button>
+                        <button type="button" class="btn-secondary" id="btn-cancelar-edicao" style="display: none;">Cancelar edição</button>
                         
                         <p id="confirmacao-mensagem" style="display:none; color: green; font-weight: bold; margin-top: 15px;"></p>
                     </form>
                 </section>
-                
-                
-                <div class="back-link-container">
-                    <a href="../../index.html" class="back-link">← Voltar para Home</a>
-                </div>
+
+                <aside class="admin-side">
+                    <section class="admin-list-section">
+                        <h3 class="form-title">Gerenciar Conteúdo</h3>
+                        <div class="form-group">
+                            <label for="admin-filter" class="form-label">Filtrar por tipo</label>
+                            <select id="admin-filter" class="form-select">
+                                <option value="Todos">Todos</option>
+                                <option value="Notícia">Notícia</option>
+                                <option value="Vaga">Vaga de Estágio</option>
+                                <option value="Edital">Edital de Projeto</option>
+                            </select>
+                        </div>
+                        <div id="admin-list" class="admin-list"></div>
+                        <p id="admin-list-status" class="admin-list-status"></p>
+                    </section>
+
+                    <div class="back-link-container">
+                        <a href="../../index.html" class="back-link">← Voltar para Home</a>
+                    </div>
+                </aside>
             </div>
         </main>
         <footer class="footer">
